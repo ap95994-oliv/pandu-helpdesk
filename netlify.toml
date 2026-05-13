@@ -1,4 +1,4 @@
 [build]
   base = "pandu-site"
-  publish = "pandu-site"
-  functions = "pandu-site/netlify/functions"
+  publish = "."
+  functions = "netlify/functions"
