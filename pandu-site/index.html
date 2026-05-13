@@ -625,7 +625,7 @@ footer::after {
 
 <script>
 // URL Worker Cloudflare kamu — ganti setelah deploy Worker
-const WORKER_URL = '/.netlify/functions/chat';
+const WORKER_URL = 'https://api.anthropic.com/v1/messages';
 
 function toggleWA() {
   document.getElementById('waPopup').classList.toggle('show');
@@ -928,7 +928,7 @@ async function sendMsg(text) {
   try {
     const res = await fetch(WORKER_URL, {
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{'Content-Type':'application/json','x-api-key':'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','anthropic-version':'2023-06-01'},
       body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages:history})
     });
     const data = await res.json();
