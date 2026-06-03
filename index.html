@@ -584,7 +584,7 @@ footer::after {
         </a>
         <a href="https://coretaxdjp.pajak.go.id" target="_blank">Coretax DJP</a>
         <a href="tel:1500200">
-          <img src="https://kringpajak.pajak.go.id/img/logo-kp.png" alt="Kring Pajak 1500200" style="height:22px;object-fit:contain;vertical-align:middle;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.nextSibling.style.display='inline'"><span style="display:none">Kring Pajak 1500200</span>
+          <span style="font-weight:600;letter-spacing:0.3px;">📞 Kring Pajak 1500200</span>
         </a>
       </div>
     </div>
@@ -986,7 +986,14 @@ async function sendMsg(text) {
     addMsg('bot', fmt(reply)+(vid?videoHTML(vid):''));
   } catch {
     removeTyping();
-    addMsg('bot','Maaf, koneksi bermasalah. Silakan hubungi <strong>Kring Pajak 1500200</strong>.');
+    addMsg('bot',
+      'Maaf, sepertinya ada gangguan koneksi. 😔<br><br>' +
+      'Anda bisa menghubungi kami melalui:<br>' +
+      '• <strong>Petugas Pelayanan KPP</strong> via WhatsApp: <a href="https://wa.me/6281220186039" target="_blank" rel="noopener">081220186039</a><br>' +
+      '• <strong>Telepon KPP Pratama Jakarta Menteng Dua</strong>: <a href="tel:0213442471">(021) 3442471</a><br>' +
+      '• <strong>Kring Pajak</strong>: <a href="tel:1500200">1500200</a><br><br>' +
+      'Silakan coba refresh halaman atau periksa koneksi internet Anda.'
+    );
   }
   busy=false;
 }
