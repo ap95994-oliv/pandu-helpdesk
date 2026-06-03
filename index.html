@@ -928,7 +928,7 @@ async function sendMsg(text) {
   try {
     const res = await fetch(WORKER_URL, {
       method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':'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','anthropic-version':'2023-06-01'},
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SYSTEM,messages:history})
     });
     const data = await res.json();
